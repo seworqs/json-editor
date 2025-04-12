@@ -1,0 +1,34 @@
+{
+    "name": "seworqs/json-editor",
+    "description": "Nice JSON editor to easily create or edit your JSON files.",
+    "type": "library",
+    "license": "Apache-2.0",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "S.E. Franke",
+            "email": "sven.franke@seworqs.eu"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Seworqs\\Json\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Seworqs\\Json\\Test\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "adbario/php-dot-notation": "^3.3",
+        "seworqs/semver": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11"
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}

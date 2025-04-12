@@ -1,0 +1,32 @@
+{
+  "name": "seworqs/some-module",
+  "description": "Some description",
+  "type": "library",
+  "version": "2.1.0",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "J. Doe",
+      "email": "jd@somecompany.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Seworqs\\Some\\Module\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Seworqs\\Some\\Module\\Test\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11"
+  },
+  "scripts": {
+    "test": "phpunit"
+  }
+}
