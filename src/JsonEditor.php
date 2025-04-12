@@ -27,7 +27,7 @@ class JsonEditor {
             throw new \RuntimeException("File ($filePath) already exists.");
         }
 
-        $editor = new JsonEditor($filePath);
+        $editor = new static($filePath);
         $editor->dot->setArray([]);
         $editor->saveAs($filePath);
 
@@ -36,7 +36,7 @@ class JsonEditor {
 
     public static function createFromFile(string $filePath): static {
 
-        $editor = new JsonEditor($filePath);
+        $editor = new static($filePath);
 
         $editor->reload();
 
