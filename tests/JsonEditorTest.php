@@ -15,7 +15,7 @@ class JsonEditorTest extends TestCase
     public function tearDown(): void
     {
         // Clean up test.json.
-        unlink($this->_pathToTestFile);
+        //unlink($this->_pathToTestFile);
         parent::tearDown();
     }
 
@@ -94,7 +94,7 @@ class JsonEditorTest extends TestCase
         $this->assertEquals('jd@somecompany.com', $editor->get('authors.2.email'));
 
         // Add to an array.
-        $editor->add('authors', ['name' => 'author3', 'email' => 'author3@somecompany.com'], false);
+        $editor->add('authors', ['name' => 'author3', 'email' => 'author3@somecompany.com']);
         $this->assertTrue($editor->has('authors.3'));
         $this->assertEquals('author3', $editor->get('authors.3.name'));
         $this->assertEquals('author3@somecompany.com', $editor->get('authors.3.email'));
@@ -116,14 +116,12 @@ class JsonEditorTest extends TestCase
         $editor->delete('authors.1');
 
         // === ADD OBJECT ===
-        $editor->addObject('require'); // same as $editor->set('require', (object)[]);
         $editor->add('require.php', '^8.1');
 
-        $editor->addObject('require-dev');
         $editor->add('require-dev.phpunit/phpunit', '^11');
+        $editor->add('require.seworqs/commons-string', '*');
 
-        $editor->addObject('scripts')
-            ->add('scripts.test', 'phpunit');
+        $editor->add('scripts.test', 'phpunit');
 
         // === SAVE ===
         $editor->save();

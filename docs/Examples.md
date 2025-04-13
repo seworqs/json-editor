@@ -69,17 +69,26 @@ $json->saveAs('/new/file/path.json');
 // Get key, using a default value.
 $value = $json->get('unknown.key', '123456');
 
+// When you want en empty object.
+$editor->set('require', (object)[]);
+
 // Add an object (like a require field in a composer.json)
-$json->addObject('require'); // same as $editor->set('require', (object)[]);
 $json->add('require.php', '^8.1');
+$json->add('require.seworqs/commons-string', '*');
+
+// When you need an array of elements (like authors)
+// the first element(s) need to be added as an array.
+$editor->add('authors', [['name' => 'author1', 'value' => 'author1@somecompany.com'],['name' => 'author2', 'value' => 'auhtor2@somecompany.com']]);
+
+// When there is an array, you simple can add it.        
+$editor->add('authors', ['name' => 'author1', 'value' => 'author3@somecompany.com']);
 
 /*
  * You can use chaining on most of the functions. 
  */
 
 // Chaining
-$json->addObject('require')
-    ->add('require.php', '^8.1')
+$json->add('require.php', '^8.1')
     ->set('name', 'vendor/nice-project');
 
 /*

@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v1.2.0
+
+###
+- Added extra example for object/array creation.
+- Added extra test for object/array creation.
+
+### Fixed
+- Removed double array test in JsonEditorTest.php.
+
+### Deprecated
+- addObject(). Use add() directly with proper keys.
+
+---
+
 ## v1.1.0
 
 ### Changed

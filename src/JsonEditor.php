@@ -92,10 +92,13 @@ class JsonEditor {
         return $this;
     }
 
+    /*
+     * @deprecated Use add() directly instead. This method will be removed in 2.0.0
+     */
     public function addObject(string $key): static
     {
         if (!$this->has($key)) {
-            $this->set($key, (object)[]);
+            $this->set($key, []);
         }
         return $this;
     }
