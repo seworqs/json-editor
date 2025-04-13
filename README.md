@@ -76,9 +76,9 @@ Seworqs builds clean, reusable modules for PHP and Mendix developers.
 Learn more at [github.com/seworqs](https://github.com/seworqs)
 
 ## Badges
-[![Latest Version](https://img.shields.io/packagist/v/seworqs/json-editor.svg?style=flat-square)](https://packagist.org/packages/seworqs/json)
-[![Total Downloads](https://img.shields.io/packagist/dt/seworqs/json.svg?style=flat-square)](https://packagist.org/packages/seworqs/json)
-[![License](https://img.shields.io/packagist/l/seworqs/json?style=flat-square)](https://packagist.org/packages/seworqs/json)
-[![PHP Version](https://img.shields.io/packagist/php-v/json/editor.svg?style=flat-square)](https://packagist.org/packages/seworqs/json)
+[![Latest Version](https://img.shields.io/packagist/v/seworqs/json-editor.svg?style=flat-square)](https://packagist.org/packages/seworqs/json-editor)
+[![Total Downloads](https://img.shields.io/packagist/dt/seworqs/json-editor.svg?style=flat-square)](https://packagist.org/packages/seworqs/json-editor)
+[![License](https://img.shields.io/packagist/l/seworqs/json-editor?style=flat-square)](https://packagist.org/packages/seworqs/json-editor)
+[![PHP Version](https://img.shields.io/packagist/php-v/seworqs/json-editor.svg?style=flat-square)](https://packagist.org/packages/seworqs/json-editor)
 [![Made by SEworqs](https://img.shields.io/badge/made%20by-SEworqs-002d74?style=flat-square&logo=https://raw.githubusercontent.com/seworqs/json/main/assets/logo.svg&logoColor=white)](https://github.com/seworqs)
 
