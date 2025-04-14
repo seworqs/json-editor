@@ -1,6 +1,6 @@
 # SEworqs JSON Editor
 
-An easy way to create or edit JSON files.
+A dot-notated, chainable JSON editor for PHP with built-in file support and robust array handling.
 
 ## Installation
 

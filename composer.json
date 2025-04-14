@@ -1,9 +1,13 @@
 {
     "name": "seworqs/json-editor",
-    "description": "Nice JSON editor to easily create or edit your JSON files.",
+    "description": "A dot-notated, chainable JSON editor for PHP with built-in file support and robust array handling.",
     "type": "library",
     "license": "Apache-2.0",
-    "version": "1.2.0",
+    "keywords": [
+        "json", "editor", "json manipulation", "dot notation", "json writer",
+        "json file", "php", "seworqs", "array handling", "immutable"
+    ],
+    "version": "1.2.1",
     "authors": [
         {
             "name": "S.E. Franke",

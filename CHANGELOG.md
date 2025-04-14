@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## v1.2.1
+
+No functional changes.
+
+### Added
+- Added keywords to composer.json
+
+### Changes
+- Description in composer.json
+- Intro in README.md
+
+---
+
 ## v1.2.0
 
 ### Added
