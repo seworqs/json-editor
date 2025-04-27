@@ -5,3 +5,5 @@
 /.phpunit.result.cache
 /.DS_Store
 /tests/index.php
+/tests/json/test.json
+/tests/json/from-memory.json

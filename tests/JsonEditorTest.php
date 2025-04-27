@@ -10,6 +10,7 @@ use Seworqs\Semver\Enum\EnumBumpReleaseType;
 class JsonEditorTest extends TestCase
 {
     private string $_pathToTestFile = __DIR__ . '/json/test.json';
+    private string $_pathToTestFileFromMemory = __DIR__ . '/json/from-memory.json';
     private string $_pathToTemplateFile = __DIR__ . '/json/template.json';
 
     public function tearDown(): void
@@ -133,5 +134,30 @@ class JsonEditorTest extends TestCase
         // Compare with template file (and testing createFromFile also...)
         $tmplEditor = JsonEditor::createFromFile($this->_pathToTemplateFile);
         $this->assertEquals($tmplEditor->toArray(), $editor->toArray());
+    }
+
+    public function testInMemorySave() {
+        // In memory.
+        $inMemory = JsonEditor::inMemory();
+
+        $inMemory->add('name', 'From memory!');
+        $this->assertEquals('From memory!', $inMemory->get('name'));
+
+        $this->expectException(\RuntimeException::class);
+        $inMemory->save();
+    }
+
+    public function testInMemorySaveAs() {
+        // In memory.
+        $inMemory = JsonEditor::inMemory();
+
+        $inMemory->add('name', 'From memory!');
+        $this->assertEquals('From memory!', $inMemory->get('name'));
+
+        $inMemory->saveAs($this->_pathToTestFileFromMemory);
+
+        // Check file existence and valid JSON.
+        $this->assertFileExists($this->_pathToTestFileFromMemory);
+        $this->assertJson(file_get_contents($this->_pathToTestFileFromMemory));
     }
 }

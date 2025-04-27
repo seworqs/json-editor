@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## v1.3.0
+
+### Added
+- Support for in-memory JsonEditor instances using `inMemory()`
+- Internal constructor now as an optional filePath parameter (no breaking changes)
+- Added test
+
+---
+
 ## v1.2.1
 
 No functional changes.

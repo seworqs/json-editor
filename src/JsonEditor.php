@@ -10,12 +10,12 @@ use Seworqs\Semver\Semver;
 class JsonEditor {
 
     private Dot $dot;
-    private string $filePath;
+    private ?string $filePath;
 
     ////////////////////
     /// CONSTRUCTOR
     ////////////////////
-    private function __construct(string $filePath)
+    private function __construct(?string $filePath = null)
     {
         $this->dot = new Dot();
         $this->filePath = $filePath;
@@ -37,8 +37,15 @@ class JsonEditor {
     public static function createFromFile(string $filePath): static {
 
         $editor = new static($filePath);
-
         $editor->reload();
+
+        return $editor;
+    }
+
+    public static function inMemory(array $initialData = []): static {
+
+        $editor = new static();
+        $editor->dot->setArray($initialData);
 
         return $editor;
     }
@@ -49,11 +56,7 @@ class JsonEditor {
 
     public function add(string $key, mixed $value): static
     {
-//        if ($overwrite) {
-//            $this->dot->set($key, $value);
-//        } else {
-//            $this->dot->add($key, $value);
-//        }
+
         if (!$this->has($key)) {
             $this->dot->set($key, $value);
             return $this;
@@ -167,7 +170,9 @@ class JsonEditor {
 
     public function save(): static
     {
-        if (file_exists($this->filePath)) {
+        if ($this->filePath === null) {
+            throw new \RuntimeException('Cannot save without a file path. Use saveAs($filePath) instead.');
+        } elseif (file_exists($this->filePath)) {
             return $this->saveAs($this->filePath);
         } else {
             throw new \RuntimeException(sprintf("File (%s) does not exist.", $this->filePath));
